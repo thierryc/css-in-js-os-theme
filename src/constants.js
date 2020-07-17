@@ -1,3 +1,6 @@
+export const Black = { r: 0, g: 0, b: 0 , a: 1.0}
+export const White = { r: 255, g: 255, b: 255 , a: 1.0}
+
 export const LightColors = {
   Blue: { r: 0, g: 122, b: 255 , a: 1.0},
   Green: { r: 52, g: 199, b: 89 , a: 1.0},
@@ -13,7 +16,10 @@ export const LightColors = {
   gray3: { r: 199, g: 199, b: 204 , a: 1.0},
   gray4: { r: 209, g: 209, b: 214 , a: 1.0},
   gray5: { r: 229, g: 229, b: 234 , a: 1.0},
-  gray6: { r: 242, g: 242, b: 247 a: 1.0}
+  gray6: { r: 242, g: 242, b: 247 a: 1.0},
+  background: { r: 247, g: 247, b: 247 , a: 1.0},
+  elevation1: { r: 240, g: 240, b: 240 , a: 1.0},
+  elevation2: { r: 231, g: 231, b: 231 , a: 1.0},
 }
 
 export const DarkColors = {
@@ -31,7 +37,10 @@ export const DarkColors = {
   gray3: { r: 72, g: 72, b: 74 , a: 1.0},
   gray4: { r: 58, g: 58, b: 60 , a: 1.0},
   gray5: { r: 44, g: 44, b: 46 , a: 1.0},
-  gray6: { r: 28, g: 28, b: 30, a: 1.0}
+  gray6: { r: 28, g: 28, b: 30, a: 1.0},
+  background: { r: 37, g: 37, b: 37 , a: 1.0},
+  elevation1: { r: 45, g: 45, b: 45 , a: 1.0},
+  elevation2: { r: 49, g: 49, b: 49 , a: 1.0},
 }
 
 export const LightTheme = {
@@ -39,7 +48,8 @@ export const LightTheme = {
   positive: LightColors.Green,
   negative: LightColors.Red,
   warning: LightColors.Orange,
-  neutral: LightColors.gray
+  neutral: LightColors.gray,
+  background: DarkColors.gray5,
 }
 
 export const DarkTheme = {
@@ -47,5 +57,6 @@ export const DarkTheme = {
   positive: DarkColors.Green,
   negative: DarkColors.Red,
   warning: DarkColors.Orange,
-  neutral: DarkColors.gray
+  neutral: DarkColors.gray,
+  background: DarkColors.gray5,
 }

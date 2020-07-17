@@ -1,5 +1,5 @@
 {
-  "name": "create-next-example-app",
+  "name": "css-in-js-os-theme-gh-page",
   "scripts": {
     "dev": "next",
     "build": "next build",

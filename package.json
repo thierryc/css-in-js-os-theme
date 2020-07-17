@@ -1,8 +1,14 @@
 {
-  "name": "css-in-js-os-theme",
+  "name": "@ap.cx/css-in-js-os-theme",
   "version": "1.0.0",
   "description": "Emotion based css-in-js OS theme for app or sketch plugin.",
+  "author": "thierryc",
+  "license": "MIT",
   "main": "dist/index.js",
+  "files": [
+    "dist",
+    "src"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "predeploy": "cd gh-pages && git pull && npm install && npm run build",
@@ -22,16 +28,33 @@
     "theme",
     "react"
   ],
-  "author": "",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/thierryc/css-in-js-os-theme/issues"
   },
   "homepage": "https://github.com/thierryc/css-in-js-os-theme#readme",
-  "dependencies": {
+  "peerDependencies": {
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0",
     "emotion": "^10.0.27"
   },
   "devDependencies": {
-    "gh-pages": "^3.1.0"
+    "@rollup/plugin-babel": "^5.1.0",
+    "@rollup/plugin-commonjs": "^14.0.0",
+    "@rollup/plugin-node-resolve": "^8.4.0",
+    "@rollup/plugin-url": "^5.0.1",
+    "eslint": "^7.4.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.20.3",
+    "eslint-plugin-standard": "^4.0.1",
+    "gh-pages": "^3.1.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "rollup": "^2.21.0"
+  },
+  "dependencies": {
+    "emotion": "^10.0.27"
   }
 }

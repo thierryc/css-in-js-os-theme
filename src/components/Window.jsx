@@ -1,38 +1,15 @@
-import styled from '@emotion/styled'
+import React from 'react'
+import { css } from '@emotion/core'
+import Theme from '../theme'
 
-
-const dv = {
-  variant: {
-    default: {
-      padding: 'padding: 20.5px;'
-    },
-    popover: {
-      padding: 'padding: 10px 8.5px 10px 8.5px;'
-    },
-    sheet: {
-      padding: 'padding: 10px 8.5px 10px 8.5px;'
-    }
-  }
-}
-
-const getPadding = ({ variant = 'default' }) => (
-  dv.variant[variant].padding || null
+// eslint-disable-next-line react/prop-types
+const Window = ({ popover = false, sheet = false, className = null, children }) => (
+  <div
+    className={`${className} ${popover ? 'popover' : null} ${sheet ? 'sheet' : null}`}
+    css={css`${Theme.window}`}
+  >
+    {children}
+  </div>
 )
-
-const Window = styled.div`
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "SF UI Display", Helvetica, Arial, sans-serif;
-  font-size: 13px;
-  ${getPadding}
-  color: #000000;
-  background: #ffffff;
-  @media (prefers-color-scheme: dark) {
-    color: #ffffff;
-    background: #000000;
-  }
-`
 
 export default Window

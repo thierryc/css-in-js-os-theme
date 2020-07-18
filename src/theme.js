@@ -73,7 +73,9 @@ export const Theme = {
   colors,
   button: css`
     /* label */
+    padding: 3px 13px 4px 13px;
     color: rgba(0,0,0,0.85);
+    min-width: 68px;
     letter-spacing: -0.08px;
     text-align: center;
     /* button */
@@ -87,7 +89,7 @@ export const Theme = {
       /* button */
       background-image: linear-gradient(180deg, #6CB3FA 0%, #067DFF 100%);
       box-shadow: 0 0.5px 0.5px 0 rgba(0,0,0,0.15);
-      border: 0.5px solid rgba(210,93,65,1.0);
+      border: 0.5px solid rgba(210,93,65,0.85);
       border-radius: 3.5px;
     }
     &.primary:active {
@@ -117,14 +119,44 @@ export const Theme = {
         color: #FFFFFF;
         /* button */
         background-image: linear-gradient(180deg, #1768E5 0%, #145CCC 100%);
-        box-shadow: 0 0 1px 0 rgba(0,0,0,0.40), 0 0 1px 0 rgba(0,0,0,0.20), inset 0 0 0 0 rgba(255,255,255,0.25), inset 0 1px 0 0 rgba(255,255,255,0.06);
+        box-shadow: 0 0 1.5px 0 rgba(0,0,0,0.40), 0 0.5px 1.5px 0 rgba(0,0,0,0.20), inset 0 0.5px 0 0 rgba(255,255,255,0.25), inset 0 1px 0 0 rgba(255,255,255,0.06);
         border-radius: 3.5px;
       }
       &:disabled {
-        color: rgba(255,255,255,0.85);
+        color: rgba(255,255,255,0.35);
         background: rgba(255,255,255,0.25);
-        border: 0.5 solid rgba(0,0,0,0.35);
-        box-shadow: 0 0 1px 0 rgba(0,0,0,0.20), inset 0 1px 0 0 rgba(255,255,255,0.04), inset 0 0 0 0 rgba(255,255,255,0.16);
+        border: 0.5px solid rgba(0,0,0,0.35);
+        box-shadow: 0 0.5px 1.5px 0 rgba(0,0,0,0.20), inset 0 1px 0 0 rgba(255,255,255,0.04), inset 0 0.5px 0 0 rgba(255,255,255,0.16);
+      }
+    }
+  `,
+  window: css`
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "SF UI Display", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    padding: 20.5px;
+    color: #242424;
+    letter-spacing: -0.08px;
+    background-color: #ffffff;
+    &.popover {
+      padding: 10px 8.5px 10px 8.5px;
+      background-color: #EDEDED;
+    }
+    &.sheet {
+      background-color: #ffffff;
+      padding: 10px 8.5px 10px 8.5px;
+    }
+    @media (prefers-color-scheme: dark) {
+      color: rgba(255,255,255,0.85);
+      background-color: #1C1D1E;
+      &.popover {
+        background-color: #2D2D2D;
+      }
+      &.sheet {
+        background-color: #1C1D1E;
       }
     }
   `

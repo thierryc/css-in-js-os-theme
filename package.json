@@ -1,6 +1,6 @@
 {
   "name": "@ap.cx/css-in-js-os-theme",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Emotion based css-in-js OS theme for app or sketch plugin.",
   "author": "thierryc",
   "private": false,

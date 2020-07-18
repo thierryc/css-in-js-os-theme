@@ -1,5 +1,6 @@
 
 import Color from 'color'
+import { css } from '@emotion/core'
 
 export const Black = { r: 0, g: 0, b: 0 }
 export const White = { r: 255, g: 255, b: 255 }
@@ -43,47 +44,90 @@ export const DarkColors = {
   gray6: { r: 28, g: 28, b: 30 },
   background: { r: 37, g: 37, b: 37 },
   elevation1: { r: 45, g: 45, b: 45 },
-  elevation2: { r: 49, g: 49, b: 49 },
-  buttons: {
-
-  }
+  elevation2: { r: 49, g: 49, b: 49 }
 }
 
 export const LightTheme = {
   primary: LightColors.Blue,
   positive: LightColors.Green,
   negative: LightColors.Red,
-  warning: LightColors.Orange,
-  color: Black,
-  background: DarkColors.gray5,
-  buttons: {
-    default: [Color(White).darken(0.1).hsl().string(), Color(White).darken(0.2).hsl().string()],
-    primary: [Color(LightColors.Blue).lighten(0.2).hsl().string(), Color(LightColors.Blue).hsl().string()],
-    positive: [Color(LightColors.Green).lighten(0.2).hsl().string(), Color(LightColors.Green).string()],
-    negative: [Color(LightColors.Red).lighten(0.2).hsl().string(), Color(LightColors.Red).string()],
-    warning: [Color(LightColors.Orange).lighten(0.2).hsl().string(), Color(LightColors.Orange).string()]
-  }
+  warning: LightColors.Orange
 }
 
 export const DarkTheme = {
   primary: DarkColors.Blue,
   positive: DarkColors.Green,
   negative: DarkColors.Red,
-  warning: DarkColors.Orange,
-  color: White,
-  background: DarkColors.gray5,
-  buttons: {
-    default: [Color(White).darken(0.1).alpha(0.1).hsl().string(), Color(White).darken(0.2).alpha(0.1).hsl().string()],
-    primary: [Color(DarkColors.Blue).darken(0.1).hsl().string(), Color(DarkColors.Blue).darken(0.2).hsl().string()],
-    positive: [Color(DarkColors.Green).darken(0.1).hsl().string(), Color(DarkColors.Green).darken(0.2).hsl().string()],
-    negative: [Color(DarkColors.Red).darken(0.1).hsl().string(), Color(DarkColors.Red).darken(0.2).hsl().string()],
-    warning: [Color(DarkColors.Orange).darken(0.1).hsl().string(), Color(DarkColors.Orange).darken(0.2).hsl().string()]
-  }
+  warning: DarkColors.Orange
 }
 
+const colors = Object.keys(LightTheme).reduce((acc, key) => {
+  acc[key] = {
+    light: LightTheme[key],
+    dark: DarkColors[key]
+  }
+  return acc
+}, {})
+
 export const Theme = {
-  Light: LightTheme,
-  Dark: DarkTheme
+  colors,
+  button: css`
+    /* label */
+    color: rgba(0,0,0,0.85);
+    letter-spacing: -0.08px;
+    text-align: center;
+    /* button */
+    background: #FFFFFF;
+    border: 0.5px solid rgba(0,0,0,0.15);
+    box-shadow: 0 0 1.5px 0 rgba(0,0,0,0.20);
+    border-radius: 3px;
+    &:active, &.primary {
+      /* label */
+      color: #FFFFFF;
+      /* button */
+      background-image: linear-gradient(180deg, #6CB3FA 0%, #067DFF 100%);
+      box-shadow: 0 0.5px 0.5px 0 rgba(0,0,0,0.15);
+      border: 0.5px solid rgba(210,93,65,1.0);
+      border-radius: 3.5px;
+    }
+    &.primary:active {
+      color: rgba(255,255,255,0.85);
+      background-image: linear-gradient(180deg, #3A99F8 0%, #0064D1 100%);
+    }
+
+    &:disabled {
+      /* label */
+      color: rgba(37,37,37,0.25);
+      /* button */
+      background: rgba(255,255,255,0.5);;
+      border: 0.5px solid rgba(0,0,0,0.15);
+      box-shadow: 0 0 1px 0 rgba(0,0,0,0.20);
+      border-radius: 3px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      /* label */
+      color: rgba(255,255,255,0.85);
+      /* button */
+      background: rgba(255,255,255,0.25);
+      border: 0.5 solid rgba(0,0,0,0.35);
+      box-shadow: 0 0 1px 0 rgba(0,0,0,0.20), inset 0 1px 0 0 rgba(255,255,255,0.04), inset 0 0 0 0 rgba(255,255,255,0.16);
+      &:active, &.primary {
+        /* label */
+        color: #FFFFFF;
+        /* button */
+        background-image: linear-gradient(180deg, #1768E5 0%, #145CCC 100%);
+        box-shadow: 0 0 1px 0 rgba(0,0,0,0.40), 0 0 1px 0 rgba(0,0,0,0.20), inset 0 0 0 0 rgba(255,255,255,0.25), inset 0 1px 0 0 rgba(255,255,255,0.06);
+        border-radius: 3.5px;
+      }
+      &:disabled {
+        color: rgba(255,255,255,0.85);
+        background: rgba(255,255,255,0.25);
+        border: 0.5 solid rgba(0,0,0,0.35);
+        box-shadow: 0 0 1px 0 rgba(0,0,0,0.20), inset 0 1px 0 0 rgba(255,255,255,0.04), inset 0 0 0 0 rgba(255,255,255,0.16);
+      }
+    }
+  `
 }
 
 export default Theme

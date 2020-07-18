@@ -15,14 +15,15 @@ export const Default = () => (
 
 export const Primary = () => (
   <Window>
-    <Button variant="primary" onClick={action('clicked')}>Primary Button</Button>
+    <Button className="primary" onClick={action('clicked')}>Primary Button</Button>
   </Window>
 )
 
-export const Positive = () => (
+export const Disabled = () => (
   <Window>
-    <Button variant="positive" onClick={action('clicked')}>
-      <span role="img" aria-label="so cool"> 👍 </span>Positive Button</Button>
+    <Button disabled onClick={action('clicked')}>
+      Disabled Button
+    </Button>
   </Window>
 )
 

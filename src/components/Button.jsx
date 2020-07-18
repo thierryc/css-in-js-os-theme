@@ -37,30 +37,8 @@ border-radius: 3.5px;
 
 */
 
-const getBackgroundImage = (theme, { variant = 'default' }) => {
-  console.log(Theme[theme])
-  if (!Theme[theme] || !Theme[theme].buttons[variant]) return null
-  const colorStart = Theme[theme].buttons[variant][0]
-  const colorEnd = Theme[theme].buttons[variant][1]
-  console.log(`background-image: linear-gradient(180deg, ${colorStart} 0%, ${colorEnd} 100%)`);
-  return css`background-image: linear-gradient(180deg, ${colorStart} 0%, ${colorEnd} 100%)`
-}
-
 const Button = styled.button`
-  padding: 3px 20px 4px 20px;
-  color: #000000;
-  ${props => getBackgroundImage('Light', props)};
-  border: 0 solid rgba(0,0,0,0.10);
-  box-shadow: 0 0 0 0 rgba(0,0,0,0.15);
-  border-radius: 4px;
-  @media (prefers-color-scheme: dark) {
-    color: #ffffff;
-    background: rgba(255,255,255,0.22);
-    ${props => getBackgroundImage('Dark', props)};
-    border: 0 solid rgba(0,0,0,0.35);
-    box-shadow: inset 0 0 0 0 rgba(255,255,255,0.12), inset 0 1px 0 0 rgba(255,255,255,0.03);
-    border-radius: 4px;
-  }
+  ${Theme.button}
 `
 
 export default Button

@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Emotion based css-in-js OS theme for app or sketch plugin.",
   "author": "thierryc",
+  "private": false,
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -38,7 +39,7 @@
   "bugs": {
     "url": "https://github.com/thierryc/css-in-js-os-theme/issues"
   },
-  "homepage": "https://github.com/thierryc/css-in-js-os-theme#readme",
+  "homepage": "https://thierryc.github.io/css-in-js-os-theme",
   "peerDependencies": {
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
@@ -73,7 +74,6 @@
   "dependencies": {
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
-    "color": "^3.1.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   }

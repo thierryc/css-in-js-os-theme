@@ -21,10 +21,13 @@ export default {
   ],
   plugins: [
     url(),
-    babel(),
+    babel({
+      exclude: 'node_modules/**',
+    }),
     resolve({
       extensions: ['.js', '.jsx']
     }),
     commonjs()
-  ]
+  ],
+  external: ['@emotion/core', '@emotion/styled', 'react', 'react-dom']
 }

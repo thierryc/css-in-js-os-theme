@@ -1,5 +1,4 @@
 
-import Color from 'color'
 import { css } from '@emotion/core'
 
 export const Black = { r: 0, g: 0, b: 0 }

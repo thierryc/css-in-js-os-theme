@@ -22,7 +22,8 @@ export const LightColors = {
   gray6: { r: 242, g: 242, b: 247 },
   background: { r: 247, g: 247, b: 247 },
   elevation1: { r: 240, g: 240, b: 240 },
-  elevation2: { r: 231, g: 231, b: 231 }
+  elevation2: { r: 231, g: 231, b: 231 },
+  sketchBackground: { r: 242, g: 242, b: 242 }
 }
 
 export const DarkColors = {
@@ -43,27 +44,30 @@ export const DarkColors = {
   gray6: { r: 28, g: 28, b: 30 },
   background: { r: 37, g: 37, b: 37 },
   elevation1: { r: 45, g: 45, b: 45 },
-  elevation2: { r: 49, g: 49, b: 49 }
+  elevation2: { r: 49, g: 49, b: 49 },
+  sketchBackground: { r: 46, g: 47, b: 48 }
 }
 
 export const LightTheme = {
   primary: LightColors.Blue,
   positive: LightColors.Green,
   negative: LightColors.Red,
-  warning: LightColors.Orange
+  warning: LightColors.Orange,
+  ...LightColors
 }
 
 export const DarkTheme = {
   primary: DarkColors.Blue,
   positive: DarkColors.Green,
   negative: DarkColors.Red,
-  warning: DarkColors.Orange
+  warning: DarkColors.Orange,
+  ...DarkColors
 }
 
 const colors = Object.keys(LightTheme).reduce((acc, key) => {
   acc[key] = {
     light: LightTheme[key],
-    dark: DarkColors[key]
+    dark: DarkTheme[key]
   }
   return acc
 }, {})

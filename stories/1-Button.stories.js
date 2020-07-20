@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { Button, Window } from '../'
